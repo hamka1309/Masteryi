@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Part34Activity"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#6B059FE6"
+        android:layout_margin="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/time"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="#141313"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+        <ListView
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:id="@+id/lvpart34"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"></ListView>
+        <LinearLayout
+            android:background="#5E5E5E8A"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="25sp">
+
+            <ImageView
+                android:src="@drawable/pl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/tvTime"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="00:00"
+                android:textColor="#0F110F" />
+
+            <SeekBar
+                android:layout_marginLeft="3dp"
+                android:id="@+id/seekBar"
+                android:layout_width="200dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/tvTimeTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#111111"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:textStyle="bold"
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A4189DDA"
+        android:drawableBottom="@drawable/donee"
+        android:text="Done" />
+    <Button
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:id="@+id/poin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A4189DDA"
+        android:drawableBottom="@drawable/donee"
+        android:text="Point" />
+
+
+
+
+
+</LinearLayout>

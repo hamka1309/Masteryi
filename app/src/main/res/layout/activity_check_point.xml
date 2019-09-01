@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckPointActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgExit"
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:layout_marginLeft="360dp"
+            android:layout_width="50dp"
+            android:layout_height="30sp" />
+    </LinearLayout>
+
+
+  <LinearLayout
+
+      android:gravity="center"
+      android:layout_gravity="center"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_marginTop="130dp"
+          android:background="@android:drawable/btn_star_big_on"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content">
+          <TextView
+              android:id="@+id/tvScore"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:text="0"
+              android:textColor="#880B28"
+              android:textSize="100sp"
+              android:textStyle="bold" />
+      </LinearLayout>
+
+          <TextView
+              android:gravity="center"
+              android:text="00:00"
+              android:id="@+id/tvTimer"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textColor="#880B28"
+              android:textSize="30sp"
+              android:textStyle="bold" />
+      <Button
+          android:textStyle="bold"
+          android:textColor="#111111"
+          android:layout_marginTop="210dp"
+          android:drawableBottom="@drawable/save"
+          android:background="#B200F7FF"
+          android:id="@+id/btnSave"
+          android:src="@android:drawable/ic_menu_save"
+          android:text="Save"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+  </LinearLayout>
+</LinearLayout>
