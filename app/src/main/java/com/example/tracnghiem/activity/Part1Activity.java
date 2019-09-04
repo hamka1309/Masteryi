@@ -41,9 +41,9 @@ public class Part1Activity extends AppCompatActivity  {
     private TextView tvQuestion, tvCheck,tvXemdiem,tvAnswer,tvScore,tvTimer;
     List<Question> questionList;
     private int position = 0;
-    private ImageView btnNext;
+    private Button btnNext;
     public int score = 0;
-    ImageView imgImage, imgStart;
+    ImageView imgImage, imgStart, imgExit;
     MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +80,8 @@ public class Part1Activity extends AppCompatActivity  {
         {
             case android.R.id.home:
                 onBackPressed();
+
+                mediaPlayer.stop();
                 return true;
 
             default:break;
@@ -100,7 +102,29 @@ public class Part1Activity extends AppCompatActivity  {
         tvCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer();
+                clickable();
+                if (result()==true){
+                    if (rdA.isChecked()){
+                        if (rdA.getText().equals(tvAnswer.getText())) {
+                            congdiem();
+                        }else ;
+                    }else if (rdB.isChecked()){
+                        if (rdB.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else if (rdC.isChecked()){
+                        if (rdC.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else if (rdD.isChecked()){
+                        if (rdD.getText().equals(tvAnswer.getText())){
+                            congdiem();
+                        }else ;
+                    }
+                }
+
             }
         });
         tvXemdiem.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +161,9 @@ public class Part1Activity extends AppCompatActivity  {
                         btnNext.setEnabled(false);
                     }
                 }
+                else if (position== questionList.size()){
+
+                }
                 else {
                     position++;
                     String Question = questionList.get(position).get_Question();
@@ -151,10 +178,10 @@ public class Part1Activity extends AppCompatActivity  {
                     Bitmap bitmap = BitmapFactory.decodeByteArray(hinhanh,0,hinhanh.length);
                     imgImage.setImageBitmap(bitmap);
                     openClick();
-                    rdA.setBackgroundColor(Color.WHITE);
-                    rdB.setBackgroundColor(Color.WHITE);
-                    rdC.setBackgroundColor(Color.WHITE);
-                    rdD.setBackgroundColor(Color.WHITE);
+                    rdA.setTextColor(Color.BLACK);
+                    rdB.setTextColor(Color.BLACK);
+                    rdC.setTextColor(Color.BLACK);
+                    rdD.setTextColor(Color.BLACK);
                 }
             }
         });
@@ -167,14 +194,40 @@ public class Part1Activity extends AppCompatActivity  {
                 if (mediaPlayer.isPlaying()){
                     // neu dang phat ->>> đỏi hinh ->> pause
                     mediaPlayer.pause();
-                    imgStart.setImageResource(R.drawable.pl);
+                    imgStart.setImageResource(R.drawable.play_button);
                 }else {
                     // đang dừng ->> phát ->>   start
                     mediaPlayer.start();
-                    imgStart.setImageResource(R.drawable.pausss);
+                    imgStart.setImageResource(R.drawable.pause);
                 }
                 SettimeTotal();
                 UpdateTimeSong();
+            }
+        });
+
+        skSong.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // seekTo: nhay đến đoạn mình kéo
+                mediaPlayer.seekTo(skSong.getProgress());
+
+            }
+        });
+
+        imgExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer();
             }
         });
 
@@ -204,7 +257,7 @@ public class Part1Activity extends AppCompatActivity  {
                         if (mediaPlayer.isPlaying()){
                             mediaPlayer.stop();
                         }
-                        imgStart.setImageResource(R.drawable.pl);
+                        imgStart.setImageResource(R.drawable.play_button);
 
 
                     }
@@ -243,17 +296,17 @@ public class Part1Activity extends AppCompatActivity  {
 
     public boolean result(){
         if (rdA.getText().equals(tvAnswer.getText())){
-            rdA.setBackgroundColor(Color.GREEN);
+            rdA.setTextColor(Color.GREEN);
             return true;
         }else if (rdB.getText().equals(tvAnswer.getText())){
-            rdB.setBackgroundColor(Color.GREEN);
+            rdB.setTextColor(Color.GREEN);
             return true;
         }
         else if (rdC.getText().equals(tvAnswer.getText())){
-            rdC.setBackgroundColor(Color.GREEN);
+            rdC.setTextColor(Color.GREEN);
             return true;
         }else if (rdD.getText().equals(tvAnswer.getText())){
-            rdD.setBackgroundColor(Color.GREEN);
+            rdD.setTextColor(Color.GREEN);
             return true;
         }else return false;
     }
@@ -268,7 +321,7 @@ public class Part1Activity extends AppCompatActivity  {
     public void checkAnswer(){
         final Dialog dialog = new Dialog(Part1Activity.this);
         dialog.setContentView(R.layout.check_answer_dialog);
-        dialog.setTitle("Kiểm Tra");
+        dialog.setTitle("Thoát Chương Trình");
 
         dialog.show();
         Button btnCancel,btnFinish;
@@ -277,38 +330,19 @@ public class Part1Activity extends AppCompatActivity  {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (result()==true){
-                    if (rdA.isChecked()){
-                        if (rdA.getText().equals(tvAnswer.getText())) {
-                            congdiem();
-                        }else ;
-                    }else if (rdB.isChecked()){
-                        if (rdB.getText().equals(tvAnswer.getText())){
-                            congdiem();
 
-                        }else ;
-                    }else if (rdC.isChecked()){
-                        if (rdC.getText().equals(tvAnswer.getText())){
-                            congdiem();
-
-                        }else ;
-                    }else if (rdD.isChecked()){
-                        if (rdD.getText().equals(tvAnswer.getText())){
-                            congdiem();
-                        }else ;
-                    }
-                }
-                clickable();
+                finish();
                 dialog.dismiss();
             }
         });
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickable();
-                tvCheck.setVisibility(View.GONE);
-                tvXemdiem.setVisibility(View.VISIBLE);
-                timer.cancel();
+                Intent intent = new Intent(Part1Activity.this, CheckPointActivity.class);
+                intent.putExtra("Score",tvScore.getText()+"");
+                intent.putExtra("time",tvTimer.getText()+"");
+                finish();
+                startActivity(intent);
                 dialog.dismiss();
             }
         });
@@ -345,8 +379,12 @@ public class Part1Activity extends AppCompatActivity  {
         @Override
         public void onFinish() {
             tvTimer.setText("00:00");  //SetText cho textview hiện thị thời gian.
-            Toast.makeText(Part1Activity.this,"Hết giờ",Toast.LENGTH_SHORT).show();
-
+            imgStart.setEnabled(false);
+            mediaPlayer.stop();
+            imgStart.setImageResource(R.drawable.pl);
+            tvCheck.setVisibility(View.GONE);
+            tvXemdiem.setVisibility(View.VISIBLE);
+            clickable();
         }
     }
 
@@ -379,6 +417,7 @@ public class Part1Activity extends AppCompatActivity  {
         tvTimer = findViewById(R.id.tvTimer);
         tvCheck = findViewById(R.id.tvCheck);
         btnNext  = findViewById(R.id.btnNext);
+        imgExit  = findViewById(R.id.imgExit);
     }
 
 }
