@@ -11,7 +11,7 @@
         android:textSize="20sp"
         android:gravity="center"
         android:textColor="#0202E9"
-        android:text="CheckAnswer Question"
+        android:text="Bạn muốn thoát, lưu điểm ?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <LinearLayout
@@ -23,14 +23,18 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:textColor="#F2F2F8"
+            android:background="#0F0F0F"
             android:id="@+id/btnKiemTra"
-            android:text="Submit"
+            android:text="Thoát"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:textColor="#F9F9FA"
+            android:background="#3434F0"
             android:id="@+id/btnFinish"
             android:layout_marginLeft="30dp"
-            android:text="End"
+            android:text="Lưu điểm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

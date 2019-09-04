@@ -39,7 +39,8 @@ public class Part2Activity extends AppCompatActivity {
     private int position = 0;
     public int score = 0;
     MediaPlayer mediaPlayer;
-    private ImageView imgStart,btnNext,imgBack,btnnexttt;
+    private ImageView imgStart,imgBack,btnnexttt, imgExit;
+    private Button btnNext;
 
 
     @Override
@@ -81,6 +82,7 @@ public class Part2Activity extends AppCompatActivity {
         {
             case android.R.id.home:
                 onBackPressed();
+                mediaPlayer.stop();
                 return true;
 
             default:break;
@@ -128,7 +130,24 @@ public class Part2Activity extends AppCompatActivity {
         tvCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer();
+                clickable();
+                if (result()==true){
+                    if (rdA.isChecked()){
+                        if (rdA.getText().equals(tvAnswer.getText())) {
+                            congdiem();
+                        }else ;
+                    }else if (rdB.isChecked()){
+                        if (rdB.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else if (rdC.isChecked()){
+                        if (rdC.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else ;
+                }
             }
         });
         tvXemdiem.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +160,13 @@ public class Part2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        imgExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer();
+            }
+        });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +175,7 @@ public class Part2Activity extends AppCompatActivity {
                     position=questionList.size()-1;
                     tvcount.setText((position+1)+" / "+questionList.size());
                     String Question = questionList.get(position).get_Question();
-                    tvQuestion.setText(position+1+". "+Question);
+                    tvQuestion.setText(position+1+". ");
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
                     rdC.setText(questionList.get(position).get_C());
@@ -168,7 +194,7 @@ public class Part2Activity extends AppCompatActivity {
                     String Question = questionList.get(position).get_Question();
                     tvcount.setText((position+1)+" / "+questionList.size());
 
-                    tvQuestion.setText(position+1+". "+Question);
+                    tvQuestion.setText(position+1+". ");
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
                     rdC.setText(questionList.get(position).get_C());
@@ -190,7 +216,7 @@ public class Part2Activity extends AppCompatActivity {
                     position=questionList.size()-1;
                     tvcount.setText((position+1)+" / "+questionList.size());
                     String Question = questionList.get(position).get_Question();
-                    tvQuestion.setText(position+1+". "+Question);
+                    tvQuestion.setText(position+1+". ");
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
                     rdC.setText(questionList.get(position).get_C());
@@ -204,13 +230,32 @@ public class Part2Activity extends AppCompatActivity {
                     String Question = questionList.get(position).get_Question();
                     tvcount.setText((position+1)+" / "+questionList.size());
 
-                    tvQuestion.setText(position+1+". "+Question);
+                    tvQuestion.setText(position+1+". ");
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
                     rdC.setText(questionList.get(position).get_C());
                     tvAnswer.setText(getItem(position).get_Answer());
                     radioGroup.clearCheck();
                 }
+            }
+        });
+
+        skSong.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // seekTo: nhay đến đoạn mình kéo
+                mediaPlayer.seekTo(skSong.getProgress());
+
             }
         });
 
@@ -246,11 +291,11 @@ public class Part2Activity extends AppCompatActivity {
                 if (mediaPlayer.isPlaying()){
                     // neu dang phat ->>> đỏi hinh ->> pause
                     mediaPlayer.pause();
-                    imgStart.setImageResource(R.drawable.pl);
+                    imgStart.setImageResource(R.drawable.play_button);
                 }else {
                     // đang dừng ->> phát ->>   start
                     mediaPlayer.start();
-                    imgStart.setImageResource(R.drawable.pauuuu);
+                    imgStart.setImageResource(R.drawable.pause);
                 }
                 SettimeTotal();
                 UpdateTimeSong();
@@ -319,7 +364,7 @@ public class Part2Activity extends AppCompatActivity {
     public void checkAnswer(){
         final Dialog dialog = new Dialog(Part2Activity.this);
         dialog.setContentView(R.layout.check_answer_dialog);
-        dialog.setTitle("Kiểm Tra");
+        dialog.setTitle("ThoÁT Chương trình");
 
         dialog.show();
         Button btnCancel,btnFinish;
@@ -328,36 +373,19 @@ public class Part2Activity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (result()==true){
-                    if (rdA.isChecked()){
-                        if (rdA.getText().equals(tvAnswer.getText())) {
-                            congdiem();
-                        }else ;
-                    }else if (rdB.isChecked()){
-                        if (rdB.getText().equals(tvAnswer.getText())){
-                            congdiem();
 
-                        }else ;
-                    }else if (rdC.isChecked()){
-                        if (rdC.getText().equals(tvAnswer.getText())){
-                            congdiem();
-
-                        }else ;
-                    }
-                }
-                clickable();
+                finish();
                 dialog.dismiss();
             }
         });
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickable();
-                tvCheck.setVisibility(View.GONE);
-                tvXemdiem.setVisibility(View.VISIBLE);
-                btnNext.setVisibility(View.GONE);
-                btnnexttt.setVisibility(View.VISIBLE);
-
+                Intent intent = new Intent(Part2Activity.this, CheckPointActivity.class);
+                intent.putExtra("Score",tvScore.getText()+"");
+                intent.putExtra("time",tvTimer.getText()+"");
+                finish();
+                startActivity(intent);
                 dialog.dismiss();
             }
         });
@@ -397,7 +425,7 @@ public class Part2Activity extends AppCompatActivity {
         String C = getItem(position).get_C();
         tvAnswer.setText(getItem(position).get_Answer());
         tvcount.setText((position+1)+" / " + questionList.size());
-        tvQuestion.setText(1+"."+question);
+        tvQuestion.setText(1+".");
         rdA.setText(A);
         rdB.setText(B);
         rdC.setText(C);
@@ -426,6 +454,7 @@ public class Part2Activity extends AppCompatActivity {
         tvCheck = findViewById(R.id.tvCheck);
         btnNext  = findViewById(R.id.btnNext);
         btnnexttt = findViewById(R.id.btnNextt);
+        imgExit = findViewById(R.id.imgExit);
     }
 
 

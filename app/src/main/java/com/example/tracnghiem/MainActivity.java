@@ -64,49 +64,20 @@ public class MainActivity extends AppCompatActivity
         // khởi tạo database luôn
         database = new Database(this);
 
-        // tao bảng
-//        database.QueryData("CREATE TABLE QUESTION(Id INTEGER primary key autoincrement, PART TEXT,LEVEL TEXT,QUESTION TEXT, A TEXT,B TEXT, C TEXT, D TEXT, ANSWER TEXT,IMAGE BLOB)");
+//        // tao bảng
+//        database.QueryData("CREATE TABLE QUESTION(Id INTEGER primary key autoincrement, PART INTEGER,LEVEL TEXT,QUESTION TEXT, A TEXT,B TEXT, C TEXT, D TEXT, ANSWER TEXT,IMAGE BLOB)");
 //        database.QueryData("CREATE TABLE USER(Id integer primary key autoincrement,name text,score text, anh blob)");
-        // INSERT DỮ LIỆU
-
-        // 2 250
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'4','250','qqqqq','a','b','c','a','a',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'4','250','question A','A','B','C','D','C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'B',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'B',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','250',null,'A','B','C',null,'B',null)");
-
-// 2 500
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','500',null,'A','B','C',null,'A',null)");
+//        // INSERT DỮ LIỆU
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,'3','250','What is needed in the man is office?','A computer','A coffee machine','A fax machine','A scanner','A scanner',null)");
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,'3','250','Where does the woman get her office equipment?','From the office supply store','From her friends','From an online retail supplier','From an online wholesale supplier','From her friends',null)");
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,3,'250','What is said about the shipping?','It is very quick.','It may be cheap','It takes a long time','It may be expensive.','It is very quick.',null)");
 //
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,'4','250','Where is the fire now?','At the fire department','On the tenth floor','In the elevators','In the staircase','On the tenth floor',null)");
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,'4','250','What should employees NOT do?','Leave the building immediately','Walk to the staircase','Run','Not use the elevators','Run',null)");
+//        database.QueryData("INSERT INTO QUESTION VALUES(null,4,'250','Who will you report to if any employee is missing?','The fire department’s manager','The building manager','The elevator operator','Your immediate supervisor','Your immediate supervisor',null)");
 
-// 2 750
 
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'B',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'B',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'A',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'B',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'C',null)");
-//        database.QueryData("INSERT INTO QUESTION VALUES(null,'2','750',null,'A','B','C',null,'A',null)");
-//
+
 
     }
 

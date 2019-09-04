@@ -6,10 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.Part2Activity">
+    <ImageView
+        android:id="@+id/imgExit"
+        android:layout_gravity="right"
+        android:src="@drawable/exxxxx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:gravity="left"
         android:layout_gravity="center"
         android:padding="10dp"
         android:orientation="horizontal"
@@ -17,7 +23,7 @@
         android:layout_height="60dp">
         <ImageView
             android:layout_gravity="center"
-            android:src="@drawable/time"
+            android:src="@drawable/alarm_clock"
             android:layout_width="70dp"
             android:layout_height="match_parent" />
         <TextView
@@ -27,28 +33,32 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:text="00:00"
-            android:textColor="#0A0A0A"
+            android:textColor="#D60B0B"
             android:textSize="18sp"
             android:layout_width="70dp"
             android:layout_height="match_parent" />
     </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:textSize="15sp"
-            android:layout_marginLeft="15dp"
-            android:textStyle="bold"
-            android:textColor="#111111"
-            android:text="Number: "
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Number: "
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
         <TextView
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:id="@+id/count"
             android:layout_marginLeft="10dp"
-            android:textColor="#111111"
+            android:textColor="#E6240A"
             android:textStyle="bold"
             android:text="0/10"
             android:layout_width="wrap_content"
@@ -83,30 +93,31 @@
         <RadioGroup
             android:id="@+id/rdGroup"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RadioButton
-                android:textStyle="italic"
-                android:textColor="#0A0A0A"
+                android:text="A"
+                android:textStyle="bold"
+                android:textColor="#FF8C00"
                 android:textSize="17sp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/rdA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <RadioButton
-                android:textStyle="italic"
-                android:layout_marginTop="15dp"
-                android:textColor="#0A0A0A"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="#FF8C00"
                 android:textSize="17sp"
                 android:id="@+id/rdB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <RadioButton
-                android:textStyle="italic"
-                android:layout_marginTop="15dp"
-                android:textColor="#0A0A0A"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="#FF8C00"
                 android:textSize="17sp"
                 android:id="@+id/rdC"
                 android:layout_width="match_parent"
@@ -115,23 +126,21 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="#5E5E5E8A"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="31sp">
 
         <ImageView
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/btnStart"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/pl" />
+            android:src="@drawable/play_button" />
 
         <TextView
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:textStyle="bold"
             android:gravity="center"
             android:id="@+id/tvTime"
@@ -142,9 +151,10 @@
             android:textColor="#0F110F" />
 
         <SeekBar
+            android:progressBackgroundTint="#00FFFF"
             android:layout_marginLeft="5dp"
             android:id="@+id/seekBar"
-            android:layout_width="200dp"
+            android:layout_width="240dp"
             android:layout_height="match_parent" />
 
         <TextView
@@ -158,39 +168,54 @@
             android:textSize="14sp" />
     </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="#A80389D3"
-            android:drawableBottom="@drawable/donee"
-            android:id="@+id/tvCheck"
-            android:textSize="16sp"
-            android:textColor="#020202"
-            android:gravity="center"
-            android:text="Done"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
-        <TextView
-            android:visibility="gone"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:id="@+id/tvXemDiem"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:background="#A80389D3"
-            android:drawableBottom="@drawable/donee"
-            android:gravity="center"
-            android:text="Point"
-            android:textColor="#030303"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:background="#070707"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/tvCheck"
+                android:textSize="16sp"
+                android:textColor="#F1EBEB"
+                android:gravity="center"
+                android:text="Done"
+                android:textStyle="bold"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:background="#0C0C0C"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/tvXemDiem"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Point"
+                android:textColor="#F3F0F0"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <Button
+            android:layout_marginLeft="30dp"
+            android:background="#050505"
+            android:textColor="#F6F6F7"
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Next" />
 
 
     </LinearLayout>
@@ -207,13 +232,7 @@
             android:id="@+id/btnBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_weight="1"
-            android:src="@drawable/nextttt"
-            android:id="@+id/btnNext"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Next" />
+
     </LinearLayout>
     <ImageView
         android:visibility="gone"

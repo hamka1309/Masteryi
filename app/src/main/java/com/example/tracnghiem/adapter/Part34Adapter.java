@@ -22,7 +22,7 @@ import com.example.tracnghiem.activity.Part34Activity;
 import java.util.List;
 
 public class Part34Adapter extends BaseAdapter {
-    private Context context;
+    private Part34Activity context;
     private int layout;
     private List<Question> questions;
     public boolean submit = false;
@@ -33,7 +33,7 @@ public class Part34Adapter extends BaseAdapter {
 
     }
 
-    public Part34Adapter(Context context, int layout, List<Question> questions) {
+    public Part34Adapter(Part34Activity context, int layout, List<Question> questions) {
         this.context = context;
         this.layout = layout;
         this.questions = questions;
@@ -89,12 +89,121 @@ public class Part34Adapter extends BaseAdapter {
 
 
         if (submit){
-
             holder.rdA.setClickable(false);
             holder.rdB.setClickable(false);
             holder.rdC.setClickable(false);
             holder.rdD.setClickable(false);
-        }
+            if (holder.rdA.isChecked()){
+                if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdA.setTextColor(Color.GREEN);
+                    holder.rdA.setButtonDrawable(R.drawable.done);
+                    context.congdiem();
+
+                }else {
+                    if (holder.rdB.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdB.setTextColor(Color.GREEN);
+                        holder.rdA.setTextColor(Color.RED);
+                        holder.rdA.setButtonDrawable(R.drawable.exxxxx);
+                    }else if (holder.rdC.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdC.setBackgroundColor(Color.GREEN);
+                        holder.rdA.setTextColor(Color.RED);
+                        holder.rdA.setButtonDrawable(R.drawable.exxxxx);
+
+                    }else if (holder.rdD.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdD.setTextColor(Color.GREEN);
+                        holder.rdA.setTextColor(Color.RED);
+                        holder.rdA.setButtonDrawable(R.drawable.exxxxx);
+
+                    }else ;
+                }
+            }else if (holder.rdB.isChecked()){
+                if (holder.rdB.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdB.setTextColor(Color.GREEN);
+                    holder.rdB.setButtonDrawable(R.drawable.donee);
+                    context.congdiem();
+
+
+                }else {
+                    if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdA.setTextColor(Color.GREEN);
+                        holder.rdB.setTextColor(Color.RED);
+                        holder.rdB.setButtonDrawable(R.drawable.exxxxx);
+
+                    }else if (holder.rdC.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdC.setTextColor(Color.GREEN);
+                        holder.rdB.setTextColor(Color.RED);
+                        holder.rdB.setButtonDrawable(R.drawable.exxxxx);
+
+                    }else if (holder.rdD.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdD.setTextColor(Color.GREEN);
+                        holder.rdB.setTextColor(Color.RED);
+                        holder.rdB.setButtonDrawable(R.drawable.exxxxx);
+                    }
+                }
+            }else if (holder.rdC.isChecked()){
+                if (holder.rdC.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdC.setTextColor(Color.GREEN);
+                    holder.rdC.setButtonDrawable(R.drawable.donee);
+                    context.congdiem();
+
+
+                }else {
+                     if (holder.rdB.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdB.setTextColor(Color.GREEN);
+                        holder.rdC.setTextColor(Color.RED);
+                         holder.rdC.setButtonDrawable(R.drawable.exxxxx);
+
+                     }else if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdA.setTextColor(Color.GREEN);
+                         holder.rdC.setTextColor(Color.RED);
+                         holder.rdC.setButtonDrawable(R.drawable.exxxxx);
+
+                     }else if (holder.rdD.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdD.setTextColor(Color.GREEN);
+                         holder.rdC.setTextColor(Color.RED);
+                         holder.rdC.setButtonDrawable(R.drawable.exxxxx);
+
+                     }else ;
+                }
+            }else if (holder.rdD.isChecked()){
+                if (holder.rdD.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdD.setTextColor(Color.GRAY);
+                    holder.rdD.setButtonDrawable(R.drawable.donee);
+                    context.congdiem();
+
+
+                }else {
+                    if (holder.rdB.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdB.setTextColor(Color.GREEN);
+                        holder.rdD.setTextColor(Color.RED);
+                        holder.rdD.setButtonDrawable(R.drawable.exxxxx);
+                    }else if (holder.rdC.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdC.setTextColor(Color.GREEN);
+                        holder.rdD.setTextColor(Color.RED);
+                        holder.rdD.setButtonDrawable(R.drawable.exxxxx);
+
+
+                    }else if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
+                        holder.rdA.setTextColor(Color.GREEN);
+                        holder.rdD.setTextColor(Color.RED);
+                        holder.rdD.setButtonDrawable(R.drawable.exxxxx);
+
+
+                    }
+                }
+            }else {
+                if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdA.setTextColor(Color.GREEN);
+                }else if (holder.rdB.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdB.setTextColor(Color.GREEN);
+                }else if (holder.rdC.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdC.setTextColor(Color.GREEN);
+                }else if (holder.rdD.getText().equals(holder.tvAnswer.getText())){
+                    holder.rdD.setTextColor(Color.GREEN);
+                }
+            }
+        }else ;
         return convertView;
     }
+
 }

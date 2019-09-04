@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    android:layout_margin="10dp"
+    android:background="@drawable/qqqqqqqqqq"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activityfragment.ListScoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:padding="5dp"
-        android:id="@+id/lvScore"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_margin="10dp"
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:src="@drawable/scoree"
+               android:layout_width="60dp"
+               android:layout_height="60dp" />
+           <TextView
+               android:layout_gravity="center"
+               android:layout_marginLeft="10dp"
+               android:textSize="20sp"
+               android:textStyle="bold"
+               android:textColor="#030C1B"
+               android:text="Total score"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+        <ListView
+            android:layout_margin="10dp"
+            android:id="@+id/lvScore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+
 
 </FrameLayout>

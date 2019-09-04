@@ -4,6 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
+    android:layout_marginBottom="5dp"
               android:layout_height="wrap_content">
 
 
@@ -35,33 +36,40 @@
               android:text="aaaaaa"
               android:textColor="#0C0B0B"
               android:id="@+id/tvQuestion"
-              android:textSize="15sp"
+              android:textSize="18sp"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"/>
 
-
       </LinearLayout>
       <RadioGroup
-          android:layout_marginTop="5dp"
+          android:layout_marginTop="10dp"
           android:layout_marginLeft="20sp"
+          android:layout_marginBottom="10dp"
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
           <RadioButton
+              android:textSize="17sp"
               android:id="@+id/rdA"
               android:layout_width="match_parent"
               android:layout_height="wrap_content" />
 
           <RadioButton
+              android:textSize="17sp"
+
               android:id="@+id/rdB"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               />
           <RadioButton
+              android:textSize="17sp"
+
               android:id="@+id/rdC"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"/>
           <RadioButton
+              android:textSize="17sp"
+
               android:id="@+id/rdD"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"/>

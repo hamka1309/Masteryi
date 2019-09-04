@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:background="#1E10B6B6"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,18 +9,31 @@
     android:layout_height="match_parent"
     tools:context=".activity.Part5Activity"
     android:orientation="vertical">
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/tvTimer"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="00:00"
-        android:textColor="#0A0A0A"
-        android:textSize="16sp"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/time"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvTimer"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="00:00"
+            android:textColor="#E90404"
+            android:textSize="18sp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <TextView
         android:visibility="gone"
@@ -93,13 +108,13 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:background="#A80389D3"
+            android:background="#A818E3EB"
             android:drawableBottom="@drawable/donee"
             android:id="@+id/tvCheck"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="#0A0A0A"
             android:gravity="center"
-            android:text="CheckAnswer"
+            android:text="Done"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -115,12 +130,12 @@
             android:textColor="#030303"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <Button
+        <ImageView
+            android:src="@drawable/nextttt"
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#A80389D3"
-            android:text="Next" />
+            />
 
 
     </LinearLayout>

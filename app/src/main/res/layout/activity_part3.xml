@@ -11,57 +11,66 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="#6B059FE6"
+        android:background="#F8F8F8"
         android:layout_margin="1dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:padding="5dp"
-            android:gravity="center"
-            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:layout_gravity="left"
+            android:padding="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="60dp">
+
             <ImageView
-                android:src="@drawable/time"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:src="@drawable/alarm_clock"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
             <TextView
-                android:textColor="#141313"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvTimer"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:text="00:00"
+                android:textColor="#E90404"
+                android:textSize="18sp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:visibility="gone"
+                android:text="score"
+                android:id="@+id/tvScore"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
-
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
 
-
         <ListView
-            android:layout_margin="10dp"
-            android:padding="15dp"
             android:id="@+id/lvpart34"
             android:layout_width="match_parent"
-            android:layout_height="420dp"></ListView>
+            android:layout_height="500dp"
+            android:layout_margin="10dp"
+            android:padding="15dp"></ListView>
         <LinearLayout
-            android:background="#5E5E5E8A"
             android:layout_marginBottom="10dp"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="25sp">
+            android:layout_height="30sp">
 
             <ImageView
-                android:src="@drawable/pl"
+                android:id="@+id/btnStart"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@drawable/play_button" />
 
             <TextView
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="15dp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:id="@+id/tvTime"
@@ -72,14 +81,14 @@
                 android:textColor="#0F110F" />
 
             <SeekBar
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/seekBar"
-                android:layout_width="200dp"
+                android:layout_width="240dp"
                 android:layout_height="match_parent" />
 
             <TextView
                 android:textStyle="bold"
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/tvTimeTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,26 +98,25 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:textStyle="bold"
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#A4189DDA"
-        android:drawableBottom="@drawable/donee"
-        android:text="Done" />
-    <Button
-        android:textStyle="bold"
-        android:visibility="gone"
-        android:id="@+id/poin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#A4189DDA"
-        android:drawableBottom="@drawable/donee"
-        android:text="Point" />
 
-
-
-
+        <Button
+            android:layout_marginTop="5dp"
+            android:textColor="#ECECF7"
+            android:textStyle="bold"
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0F0E0E"
+            android:visibility="visible"
+            android:text="Done" />
+        <Button
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:id="@+id/poin"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0A0A0A"
+            android:text="Point" />
 
 </LinearLayout>

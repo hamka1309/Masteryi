@@ -53,12 +53,12 @@ public class Lv500Activity extends Fragment {
 
         // set vào adapter
         gvExam = getActivity().findViewById(R.id.gvExam);
-        exams.add(new Exam("Part part1: Photo ",R.drawable.part1));
-        exams.add(new Exam("Part 2: Question-Response",R.drawable.par1));
+        exams.add(new Exam("Part 1: Photo \n",R.drawable.part1));
+        exams.add(new Exam("Part 2: Question - Response",R.drawable.par1));
         exams.add(new Exam("Part 3: Short Conversation",R.drawable.part3));
-        exams.add(new Exam("Part 4: Short Talks",R.drawable.part4));
-        exams.add(new Exam("Part 5: Incomplete Sente..",R.drawable.part5));
-        exams.add(new Exam("Part 6: Text Completion.....",R.drawable.part6));
+        exams.add(new Exam("Part 4: Short Talks \n ",R.drawable.part4));
+        exams.add(new Exam("Part 5: Incomplete Sentences",R.drawable.part5));
+        exams.add(new Exam("Part 6: Text Completion\n",R.drawable.part6));
         exams.add(new Exam("Part 7: Comprehension",R.drawable.part7));
 
 
@@ -77,26 +77,33 @@ public class Lv500Activity extends Fragment {
                     startActivity(intent);
                 }else if (position == 1){
                     Intent intent  = new Intent(getActivity(), Part2Activity.class);
-                    intent.putExtra("number_part","part2");
+                    intent.putExtra("number_part","2");
                     intent.putExtra("number_p","500");
+                    intent.putExtra("text","Part 2: Question - Responce");
+
                     intent.putExtra("media",R.raw.p2_500);
 
                     startActivity(intent);
                 }else if (position == 2){
                     Intent intent  = new Intent(getActivity(), Part34Activity.class);
-                    intent.putExtra("number_part","part3");
+                    intent.putExtra("number_part","3");
                     intent.putExtra("number_p","500");
+                    intent.putExtra("text","Part 3: Short Conversation");
+
                     startActivity(intent);
                 }else if (position == 3){
                     Intent intent  = new Intent(getActivity(), Part34Activity.class);
-                    intent.putExtra("number_part","part4");
+                    intent.putExtra("number_part","4");
                     intent.putExtra("number_p","500");
+                    intent.putExtra("text","Part 4: Short Talk");
+
                     startActivity(intent);
                 }
                 else if (position == 4){
                     Intent intent  = new Intent(getActivity(), Part5Activity.class);
-                    intent.putExtra("number_part","part5");
+                    intent.putExtra("number_part","5");
                     intent.putExtra("number_p","500");
+                    intent.putExtra("text","Part 5: Incomplete Sentences");
                     startActivity(intent);
                 }
             }
