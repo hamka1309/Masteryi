@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CheckPointActivity"></activity>
+        <activity android:name=".ListenActivitt"></activity>
+        <!-- <activity android:name=".MainActivity"/> -->
+        <activity android:name=".CheckPointActivity" />
         <activity android:name=".activity.Part5Activity" />
         <activity android:name=".activity.Part34Activity" />
         <activity android:name=".activity.Part2Activity" />
         <activity android:name=".activity.Part1Activity" />
-        <activity android:name=".Add.ThemPart1"/>
+        <activity android:name=".Add.ThemPart1" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

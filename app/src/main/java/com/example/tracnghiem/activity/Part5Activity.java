@@ -11,6 +11,7 @@ import android.os.CountDownTimer;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,13 +30,14 @@ import java.util.concurrent.TimeUnit;
 
 public class Part5Activity extends AppCompatActivity {
 
+    private ImageView imgExit;
     private CountDownTimer timer;
     private RadioButton rdA,rdB,rdC,rdD;
     private RadioGroup radioGroup;
-    private TextView tvQuestion, tvCheck,tvXemdiem,tvAnswer,tvScore,tvTimer;
+    private TextView tvQuestion, tvCheck,tvXemdiem,tvAnswer,tvScore,tvTimer,tvcount;
     List<Question> questionList;
     private int position = 0;
-    private Button btnNext, btnSubmit;
+    private Button btnNext;
     public int score = 0;
 
 
@@ -116,7 +118,27 @@ public class Part5Activity extends AppCompatActivity {
         tvCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer();
+                if (result()==true){
+                    if (rdA.isChecked()){
+                        if (rdA.getText().equals(tvAnswer.getText())) {
+                            congdiem();
+                        }else ;
+                    }else if (rdB.isChecked()){
+                        if (rdB.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else if (rdC.isChecked()){
+                        if (rdC.getText().equals(tvAnswer.getText())){
+                            congdiem();
+
+                        }else ;
+                    }else if (rdD.isChecked()){
+                        if (rdD.getText().equals(tvAnswer.getText())){
+                            congdiem();
+                        }else ;
+                    }
+                }
             }
         });
         tvXemdiem.setOnClickListener(new View.OnClickListener() {
@@ -129,12 +151,22 @@ public class Part5Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        imgExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer();
+            }
+        });
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(position>=questionList.size()-1)
                 {
                     position=questionList.size()-1;
+                    tvcount.setText((position+1)+" / "+questionList.size());
+
                     String Question = questionList.get(position).get_Question();
                     tvQuestion.setText(position+1+". "+Question);
                     rdA.setText(questionList.get(position).get_A());
@@ -154,6 +186,8 @@ public class Part5Activity extends AppCompatActivity {
                 }
                 else {
                     position++;
+                    tvcount.setText((position+1)+" / "+questionList.size());
+
                     String Question = questionList.get(position).get_Question();
                     tvQuestion.setText(position+1+". "+Question);
                     rdA.setText(questionList.get(position).get_A());
@@ -163,43 +197,15 @@ public class Part5Activity extends AppCompatActivity {
                     tvAnswer.setText(getItem(position).get_Answer());
                     radioGroup.clearCheck();
                     openClick();
-                    rdA.setBackgroundColor(Color.WHITE);
-                    rdB.setBackgroundColor(Color.WHITE);
-                    rdC.setBackgroundColor(Color.WHITE);
-                    rdD.setBackgroundColor(Color.WHITE);
+                    rdA.setTextColor(Color.BLACK);
+                    rdB.setTextColor(Color.BLACK);
+                    rdC.setTextColor(Color.BLACK);
+                    rdD.setTextColor(Color.BLACK);
                 }
             }
         });
 
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (result()==true){
-                    if (rdA.isChecked()){
-                        if (rdA.getText().equals(tvAnswer.getText())) {
-                            congdiem();
-                        }else ;
-                    }else if (rdB.isChecked()){
-                        if (rdB.getText().equals(tvAnswer.getText())){
-                            congdiem();
-
-                        }else ;
-                    }else if (rdC.isChecked()){
-                        if (rdC.getText().equals(tvAnswer.getText())){
-                            congdiem();
-
-                        }else ;
-                    }else if (rdD.isChecked()){
-                        if (rdD.getText().equals(tvAnswer.getText())){
-                           congdiem();
-                        }else ;
-                    }
-                }
-                clickable();
-
-            }
-        });
     }
 
     public void congdiem(){
@@ -209,17 +215,17 @@ public class Part5Activity extends AppCompatActivity {
 
     public boolean result(){
         if (rdA.getText().equals(tvAnswer.getText())){
-            rdA.setBackgroundColor(Color.GREEN);
+            rdA.setTextColor(Color.GREEN);
             return true;
         }else if (rdB.getText().equals(tvAnswer.getText())){
-            rdB.setBackgroundColor(Color.GREEN);
+            rdB.setTextColor(Color.GREEN);
             return true;
         }
         else if (rdC.getText().equals(tvAnswer.getText())){
-            rdC.setBackgroundColor(Color.GREEN);
+            rdC.setTextColor(Color.GREEN);
             return true;
         }else if (rdD.getText().equals(tvAnswer.getText())){
-            rdD.setBackgroundColor(Color.GREEN);
+            rdD.setTextColor(Color.GREEN);
             return true;
         }else return false;
     }
@@ -234,7 +240,7 @@ public class Part5Activity extends AppCompatActivity {
     public void checkAnswer(){
         final Dialog dialog = new Dialog(Part5Activity.this);
         dialog.setContentView(R.layout.check_answer_dialog);
-        dialog.setTitle("Kiểm Tra");
+        dialog.setTitle("Thoát CT");
 
         dialog.show();
         Button btnCancel,btnFinish;
@@ -243,38 +249,19 @@ public class Part5Activity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (result()==true){
-                    if (rdA.isChecked()){
-                        if (rdA.getText().equals(tvAnswer.getText())) {
-                            congdiem();
-                        }else ;
-                    }else if (rdB.isChecked()){
-                        if (rdB.getText().equals(tvAnswer.getText())){
-                            congdiem();
 
-                        }else ;
-                    }else if (rdC.isChecked()){
-                        if (rdC.getText().equals(tvAnswer.getText())){
-                            congdiem();
-
-                        }else ;
-                    }else if (rdD.isChecked()){
-                        if (rdD.getText().equals(tvAnswer.getText())){
-                            congdiem();
-                        }else ;
-                    }
-                }
-                clickable();
+                finish();
                 dialog.dismiss();
             }
         });
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickable();
-                tvCheck.setVisibility(View.GONE);
-                tvXemdiem.setVisibility(View.VISIBLE);
-
+                Intent intent = new Intent(Part5Activity.this, CheckPointActivity.class);
+                intent.putExtra("Score",tvScore.getText()+"");
+                intent.putExtra("time",tvTimer.getText()+"");
+                finish();
+                startActivity(intent);
                 dialog.dismiss();
             }
         });
@@ -309,6 +296,8 @@ public class Part5Activity extends AppCompatActivity {
     }
 
     private void initGetData() {
+        tvcount.setText((position+1)+" / " + questionList.size());
+
         String question = getItem(position).get_Question();
         String A = getItem(position).get_A();
         String B = getItem(position).get_B();
@@ -341,6 +330,8 @@ public class Part5Activity extends AppCompatActivity {
         tvTimer = findViewById(R.id.tvTimer);
         tvCheck = findViewById(R.id.tvCheck);
         btnNext  = findViewById(R.id.btnNext);
+        tvcount = findViewById(R.id.count);
+        imgExit = findViewById(R.id.imgExit);
     }
 
 }

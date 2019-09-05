@@ -96,7 +96,7 @@ public class Part34Adapter extends BaseAdapter {
             if (holder.rdA.isChecked()){
                 if (holder.rdA.getText().equals(holder.tvAnswer.getText())){
                     holder.rdA.setTextColor(Color.GREEN);
-                    holder.rdA.setButtonDrawable(R.drawable.done);
+                    holder.rdA.setButtonDrawable(R.drawable.donee);
                     context.congdiem();
 
                 }else {

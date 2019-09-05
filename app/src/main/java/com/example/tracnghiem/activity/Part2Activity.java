@@ -201,9 +201,9 @@ public class Part2Activity extends AppCompatActivity {
                     tvAnswer.setText(getItem(position).get_Answer());
                     radioGroup.clearCheck();
                     openClick();
-                    rdA.setBackgroundColor(Color.WHITE);
-                    rdB.setBackgroundColor(Color.WHITE);
-                    rdC.setBackgroundColor(Color.WHITE);
+                    rdA.setTextColor(Color.BLACK);
+                    rdB.setTextColor(Color.BLACK);
+                    rdC.setTextColor(Color.BLACK);
                 }
             }
         });
@@ -224,6 +224,8 @@ public class Part2Activity extends AppCompatActivity {
                     if (position==questionList.size()) {
                         btnNext.setEnabled(false);
                     }
+                }else if (position==questionList.size()){
+
                 }
                 else {
                     position++;
@@ -338,19 +340,19 @@ public class Part2Activity extends AppCompatActivity {
 
     public void congdiem(){
         score = score+10;
-        tvScore.setText(score+"");
+        tvScore.setText(score+"%");
     }
 
     public boolean result(){
         if (rdA.getText().equals(tvAnswer.getText())){
-            rdA.setBackgroundColor(Color.GREEN);
+            rdA.setTextColor(Color.GREEN);
             return true;
         }else if (rdB.getText().equals(tvAnswer.getText())){
-            rdB.setBackgroundColor(Color.GREEN);
+            rdB.setTextColor(Color.GREEN);
             return true;
         }
         else if (rdC.getText().equals(tvAnswer.getText())){
-            rdC.setBackgroundColor(Color.GREEN);
+            rdC.setTextColor(Color.GREEN);
             return true;
         }else return false;
     }
@@ -374,6 +376,7 @@ public class Part2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                mediaPlayer.stop();
                 finish();
                 dialog.dismiss();
             }
@@ -386,6 +389,7 @@ public class Part2Activity extends AppCompatActivity {
                 intent.putExtra("time",tvTimer.getText()+"");
                 finish();
                 startActivity(intent);
+                mediaPlayer.stop();
                 dialog.dismiss();
             }
         });

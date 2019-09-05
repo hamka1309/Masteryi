@@ -38,7 +38,7 @@ public class Part1Activity extends AppCompatActivity  {
     private CountDownTimer timer;
     private RadioButton rdA,rdB,rdC,rdD;
     private RadioGroup radioGroup;
-    private TextView tvQuestion, tvCheck,tvXemdiem,tvAnswer,tvScore,tvTimer;
+    private TextView tvQuestion, tvCheck,tvXemdiem,tvAnswer,tvScore,tvTimer,tvcount;
     List<Question> questionList;
     private int position = 0;
     private Button btnNext;
@@ -142,8 +142,11 @@ public class Part1Activity extends AppCompatActivity  {
             public void onClick(View v) {
                 if(position>=questionList.size()-1)
                 {
+
                     position=questionList.size()-1;
                     String Question = questionList.get(position).get_Question();
+                    tvcount.setText((position+1)+" / "+questionList.size());
+
                     tvQuestion.setText(position+1+" . "+Question);
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
@@ -168,6 +171,8 @@ public class Part1Activity extends AppCompatActivity  {
                     position++;
                     String Question = questionList.get(position).get_Question();
                     tvQuestion.setText(position+1+". "+Question);
+                    tvcount.setText((position+1)+" / "+questionList.size());
+
                     rdA.setText(questionList.get(position).get_A());
                     rdB.setText(questionList.get(position).get_B());
                     rdC.setText(questionList.get(position).get_C());
@@ -266,6 +271,8 @@ public class Part1Activity extends AppCompatActivity  {
         }, 100);
     }
     private void initGetData() {
+        tvcount.setText((position+1)+" / "+questionList.size());
+
         String question = getItem(position).get_Question();
         String A = getItem(position).get_A();
         String B = getItem(position).get_B();
@@ -285,13 +292,15 @@ public class Part1Activity extends AppCompatActivity  {
         timer.start();
 
     }
+
+
     public Question getItem(int i){
         return questionList.get(i);
     }
 
     public void congdiem(){
         score = score+10;
-        tvScore.setText(score+"");
+        tvScore.setText(score+"%");
     }
 
     public boolean result(){
@@ -332,6 +341,7 @@ public class Part1Activity extends AppCompatActivity  {
             public void onClick(View v) {
 
                 finish();
+                mediaPlayer.stop();
                 dialog.dismiss();
             }
         });
@@ -343,6 +353,7 @@ public class Part1Activity extends AppCompatActivity  {
                 intent.putExtra("time",tvTimer.getText()+"");
                 finish();
                 startActivity(intent);
+                mediaPlayer.stop();
                 dialog.dismiss();
             }
         });
@@ -418,6 +429,7 @@ public class Part1Activity extends AppCompatActivity  {
         tvCheck = findViewById(R.id.tvCheck);
         btnNext  = findViewById(R.id.btnNext);
         imgExit  = findViewById(R.id.imgExit);
+        tvcount = findViewById(R.id.count);
     }
 
 }

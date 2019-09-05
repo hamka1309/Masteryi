@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:background="#1E10B6B6"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,6 +8,12 @@
     android:layout_height="match_parent"
     tools:context=".activity.Part5Activity"
     android:orientation="vertical">
+    <ImageView
+        android:id="@+id/imgExit"
+        android:layout_gravity="right"
+        android:src="@drawable/exxxxx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_marginTop="5dp"
         android:gravity="left"
@@ -19,9 +24,9 @@
         android:layout_height="60dp">
         <ImageView
             android:layout_gravity="center"
-            android:src="@drawable/time"
+            android:src="@drawable/alarm_clock"
             android:layout_width="70dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="35dp" />
         <TextView
             android:id="@+id/tvTimer"
             android:textStyle="bold"
@@ -33,6 +38,28 @@
             android:textSize="18sp"
             android:layout_width="70dp"
             android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"
+            android:textColor="#0C0C61"
+            android:text="Number: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/count"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#E40303"
+            android:textStyle="bold"
+            android:text="0/10"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <TextView
@@ -46,18 +73,18 @@
 
     <TextView
         android:id="@+id/tvQuestion"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_margin="15dp"
         android:textColor="#0F0E0E"
         android:textStyle="bold"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:text="Câu hỏi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <RadioGroup
         android:id="@+id/rdGroup"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -66,7 +93,7 @@
 
             android:textStyle="bold"
             android:textColor="#0A0A0A"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:layout_marginTop="10dp"
             android:id="@+id/rdA"
             android:layout_width="match_parent"
@@ -76,7 +103,7 @@
             android:layout_marginTop="10dp"
 
             android:textColor="#0A0A0A"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:id="@+id/rdB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -85,7 +112,7 @@
             android:layout_marginTop="10dp"
 
             android:textColor="#0A0A0A"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:id="@+id/rdC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -94,51 +121,62 @@
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textColor="#0A0A0A"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:id="@+id/rdD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RadioGroup>
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <Button
+                android:background="#030303"
+                android:id="@+id/tvCheck"
+                android:textSize="14sp"
+                android:textColor="#F8F5F5"
+                android:gravity="center"
+                android:text="Done"
+                android:textStyle="bold"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvXemDiem"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="#0A0A0A"
+                android:gravity="center"
+                android:text="POINT"
+                android:textColor="#FDFDFD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
         <Button
-            android:background="#A818E3EB"
-            android:drawableBottom="@drawable/donee"
-            android:id="@+id/tvCheck"
-            android:textSize="14sp"
-            android:textColor="#0A0A0A"
-            android:gravity="center"
-            android:text="Done"
+            android:layout_marginLeft="30sp"
+            android:background="#000000"
+            android:textColor="#F2F2F5"
             android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:visibility="gone"
-            android:background="#A80389D3"
-            android:drawableBottom="@drawable/donee"
-            android:id="@+id/tvXemDiem"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="CheckPoin"
-            android:textColor="#030303"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <ImageView
+            android:text="next"
             android:src="@drawable/nextttt"
             android:id="@+id/btnNext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             />
-
-
     </LinearLayout>
+
 
     <LinearLayout
         android:orientation="horizontal"

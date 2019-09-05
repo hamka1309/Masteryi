@@ -53,14 +53,14 @@ public class Lv750Activity extends Fragment {
 
         // set vào adapter
         gvExam = getActivity().findViewById(R.id.gvExam);
-        exams.add(new Exam("Part 1: Photo+\n",R.drawable.part1));
-        exams.add(new Exam("Part 2: Question - Response",R.drawable.par1));
-        exams.add(new Exam("Part 3: Short Conversation",R.drawable.part3));
-        exams.add(new Exam("Part 4: Short Talks \n ",R.drawable.part4));
+        gvExam = getActivity().findViewById(R.id.gvExam);
+        exams.add(new Exam("Part 1: Photo \n",R.drawable.part1));
+        exams.add(new Exam("Part 2: Question - Response",R.drawable.iiiii));
+        exams.add(new Exam("Part 3: Short Conversation",R.drawable.uuuuu));
+        exams.add(new Exam("Part 4: Short Talks \n ",R.drawable.oppppppppp));
         exams.add(new Exam("Part 5: Incomplete Sentences",R.drawable.part5));
-        exams.add(new Exam("Part 6: Text Completion+\n",R.drawable.part6));
+        exams.add(new Exam("Part 6: Text Completion \n",R.drawable.part6));
         exams.add(new Exam("Part 7: Comprehension",R.drawable.part7));
-
 
         adapter = new ExamAdapter(getActivity(), exams);
         gvExam.setAdapter(adapter);
@@ -90,6 +90,7 @@ public class Lv750Activity extends Fragment {
                     intent.putExtra("number_part","3");
                     intent.putExtra("number_p","750");
                     intent.putExtra("text","Part 3: Short Conversation");
+                    intent.putExtra("media",R.raw.p3_750);
 
                     startActivity(intent);
                 }else if (position == 3){
@@ -97,6 +98,7 @@ public class Lv750Activity extends Fragment {
                     intent.putExtra("number_part","4");
                     intent.putExtra("number_p","750");
                     intent.putExtra("text","Part 4: Short Talk");
+                    intent.putExtra("media",R.raw.p4_750);
 
                     startActivity(intent);
                 }

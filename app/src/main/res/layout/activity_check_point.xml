@@ -35,7 +35,6 @@
 
       <LinearLayout
           android:layout_marginTop="130dp"
-          android:background="@android:drawable/btn_star_big_on"
           android:layout_width="200dp"
           android:layout_height="wrap_content">
           <TextView
@@ -61,10 +60,10 @@
               android:textStyle="bold" />
       <Button
           android:textStyle="bold"
-          android:textColor="#111111"
-          android:layout_marginTop="270dp"
+          android:textColor="#E70D0D"
+          android:layout_marginTop="280dp"
           android:drawableBottom="@drawable/save"
-          android:background="#B200F7FF"
+          android:background="#B2BBFF00"
           android:id="@+id/btnSave"
           android:src="@android:drawable/ic_menu_save"
           android:text="Save"

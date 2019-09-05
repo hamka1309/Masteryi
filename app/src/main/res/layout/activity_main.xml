@@ -14,9 +14,11 @@
         android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
+
         app:itemTextColor="#EDEDF7"
-        app:itemIconTint="@color/design_default_color_primary_dark"
-        android:background="#7205050C"
+        app:itemIconTint="#A3F509"
+        android:accessibilityPaneTitle="#D60E4F"
+        android:background="#0705050C"
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

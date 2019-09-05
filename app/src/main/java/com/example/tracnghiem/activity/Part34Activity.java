@@ -86,8 +86,8 @@ public class Part34Activity extends AppCompatActivity {
 
 
     public void congdiem(){
-        score +=10;
-        tvscore.setText(score+"");
+        score +=20;
+        tvscore.setText(score+"%");
     }
     private void onClick() {
         imgStart.setOnClickListener(new View.OnClickListener() {

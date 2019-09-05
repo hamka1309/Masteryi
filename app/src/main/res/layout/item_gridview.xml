@@ -20,8 +20,8 @@
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:src="@drawable/abc"
-                android:layout_width="120dp"
-                android:layout_height="60dp" />
+                android:layout_width="200dp"
+                android:layout_height="80dp" />
             <TextView
                 android:gravity="center"
                 android:textSize="15sp"

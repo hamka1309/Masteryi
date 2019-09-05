@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#3648E413"
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListenActivitt">
+    <ImageView
+        android:background="#00DDDDEE"
+        android:src="@drawable/assa"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp">
+
+        <ImageView
+            android:id="@+id/btnStart"
+            android:layout_width="30sp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/play_button" />
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:id="@+id/tvTime"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="00:00"
+            android:textColor="#0F110F" />
+
+        <SeekBar
+            android:layout_marginLeft="3dp"
+            android:id="@+id/seekBar"
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/tvTimeTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvA"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="aaa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+</LinearLayout>

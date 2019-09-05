@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Number: "
-            android:textColor="#000"
+            android:textColor="#0F0F9C"
             android:textSize="18sp"
             android:textStyle="bold" />
         <TextView

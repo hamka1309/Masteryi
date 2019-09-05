@@ -18,28 +18,17 @@
 
                 <item
                 android:id="@+id/lv250"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/one"
                 android:title="Level 250-500" />
                 <item
                     android:id="@+id/lv500"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/two"
                     android:title="Level 500- 750" />
                 <item
                     android:id="@+id/lv750"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/ic_filter_3_black_24dp"
                     android:title="Level 750- 990" />
-                <!--<item-->
-                <!--android:id="@+id/monly"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Môn Lý" />-->
-                <!--<item-->
-                <!--android:id="@+id/monhoa"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Môn Hóa" />-->
-                <!--<item-->
-                <!--android:id="@+id/monsinh"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Môn Sinh" />-->
+
             </group>
         </menu>
     </item>
@@ -51,6 +40,20 @@
                     android:id="@+id/LISTUSER"
                     android:icon="@drawable/ic_menu_send"
                     android:title="List Score" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="LISTENING">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/listen"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Listenning" />
+                <item android:id="@+id/tuvung"
+                    android:title="Tu Vung"/>
             </group>
         </menu>
     </item>
